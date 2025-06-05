@@ -1,5 +1,9 @@
 package ios.silv.fetch
 
+import androidx.compose.runtime.Composable
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.compose.viewModel
 import kotlin.coroutines.cancellation.CancellationException
 
 /**
@@ -14,3 +18,32 @@ suspend fun <T> suspendRunCatching(block: suspend () -> T): Result<T> =
     } catch (exception: Exception) {
         Result.failure(exception)
     }
+
+
+@Composable
+@Suppress("UNCHECKED_CAST")
+public inline fun <reified T : ViewModel> createViewModel(
+    crossinline provider: () -> T,
+): T {
+    return viewModel(
+        factory = object : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(
+                modelClass: Class<T>
+            ): T = provider() as T
+        }
+    )
+}
+
+//@Composable
+//@Suppress("UNCHECKED_CAST")
+//public inline fun <reified T : ViewModel> NavBackStackEntry.createViewModel(
+//    crossinline provider: (handle: SavedStateHandle) -> T,
+//): T = viewModel(
+//    factory = object : AbstractSavedStateViewModelFactory(this, arguments) {
+//        override fun <T : ViewModel> create(
+//            key: String,
+//            modelClass: Class<T>,
+//            handle: SavedStateHandle,
+//        ): T = provider(handle) as T
+//    }
+//)
