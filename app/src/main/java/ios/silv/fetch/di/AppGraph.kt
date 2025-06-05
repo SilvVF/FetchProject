@@ -24,7 +24,9 @@ abstract class AppGraph {
         HttpClient(OkHttp) {
             engine {
                 config {
-                    cache(Cache(File(context.cacheDir, "net_cache"), 5_000L))
+                    // 5MB
+                    val cacheSizeBytes = 5_000_000L
+                    cache(Cache(File(context.cacheDir, "net_cache"), cacheSizeBytes) )
                 }
             }
             install(ContentNegotiation) {
