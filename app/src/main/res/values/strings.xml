@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Fetch</string>
+    <string name="fetch_error_message">An error occurred while fetching data.</string>
+    <string name="list_item_id">ID: #%1$s</string>
+    <string name="list_item_name">Name: %1$s</string>
+    <string name="list_header_label">List ID: #%1$s</string>
+    <string name="fetch_topbar_label">Fetch Results</string>
 </resources>
