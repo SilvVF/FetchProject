@@ -6,8 +6,5 @@
 
 
 ### running
-```cmd
-./gradlew build run
-```
 Uses Android Gradle Plugin 8.10.1
 Compatible with Android Studio Meerkat.
