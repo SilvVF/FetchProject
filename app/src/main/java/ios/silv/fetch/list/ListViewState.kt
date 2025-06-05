@@ -1,7 +1,6 @@
 package ios.silv.fetch.list
 
 import androidx.compose.runtime.Stable
-import ios.silv.fetch.api.FetchResponse
 import ios.silv.fetch.api.FetchResponseItem
 
 @Stable

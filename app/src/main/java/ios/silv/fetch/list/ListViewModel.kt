@@ -1,10 +1,8 @@
 package ios.silv.fetch.list
 
-import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ios.silv.fetch.api.FetchApi
-import ios.silv.fetch.api.FetchResponse
 import ios.silv.fetch.api.FetchResponseItem
 import ios.silv.fetch.di.appGraph
 import kotlinx.coroutines.Job
